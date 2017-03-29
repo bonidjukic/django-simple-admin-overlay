@@ -10,10 +10,10 @@ except ImportError:
 
 
 def generate_javascript_tag(filename):
-    url = static(os.path.join('django_admin_shortcuts', 'js', filename))
+    url = static(os.path.join('admin_shortcuts', 'js', filename))
     return b'<script src="' + smart_bytes(url) + b'" type="text/javascript"></script>'
 
 
 def generate_css_tag(filename):
-    url = static(os.path.join('django_admin_shortcuts', 'css', filename))
+    url = static(os.path.join('admin_shortcuts', 'css', filename))
     return b'<link rel="stylesheet" href="' + smart_bytes(url) + b'" type="text/css">'
