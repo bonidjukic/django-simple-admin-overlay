@@ -1,0 +1,26 @@
+{% load i18n static %}
+
+<div id="django-admin-layer" data-position="{{ toolbar_position }}" data-state="{{ default_state }}">
+{% if app_list %}
+    <div id="apps-container">
+    {% for app in app_list %}
+        <div class="app-{{ app.app_label }} app-container">
+            <div class="app-link-container">
+                <a href="{{ app.app_url }}" class="app-link"
+                   title="{% blocktrans with name=app.name %}Models in the {{ name }} application{% endblocktrans %}">{{ app.name }}</a>
+            </div>
+            <div class="models-container">
+            {% for model in app.models %}
+                <div class="model-link-container">
+                    <a class="model-link" href="{{ model.admin_url }}">{{ model.name }}</a>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+    <div class="toggle-container">
+        <a href="#" id="toggle-caret"></a>
+    </div>
+{% endif %}
+</div>
