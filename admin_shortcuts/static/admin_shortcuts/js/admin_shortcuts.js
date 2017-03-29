@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function init() {
       caret.addEventListener('click', function(e) {
+        e.preventDefault();
         toggleLayer(e);
       }, false);
     }
