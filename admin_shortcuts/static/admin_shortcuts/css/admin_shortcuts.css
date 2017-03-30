@@ -107,9 +107,9 @@
   color: #136CB2;
   background-color: #fff;
   text-transform: uppercase;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
 }
 
 #django-admin-layer .model-link-container a.model-link:hover,
@@ -179,24 +179,24 @@
   background-position: 4px -1px;
   background-color: #fff;
   opacity: 0.8;
-  -webkit-border-top-left-radius: 3px;
-  -webkit-border-top-right-radius: 3px;
-  -moz-border-radius-topleft: 3px;
-  -moz-border-radius-topright: 3px;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+  -webkit-border-top-left-radius: 2px;
+  -webkit-border-top-right-radius: 2px;
+  -moz-border-radius-topleft: 2px;
+  -moz-border-radius-topright: 2px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
 }
 
 #django-admin-layer[data-position='top'][data-state='closed'] .toggle-container a {
   padding: 5px 20px;
   background-image: url(../img/caret-down-inverse.png);
   background-position: 4px -1px;
-  -webkit-border-bottom-left-radius: 3px;
-  -webkit-border-bottom-right-radius: 3px;
-  -moz-border-radius-bottomleft: 3px;
-  -moz-border-radius-bottomright: 3px;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 2px;
+  -webkit-border-bottom-right-radius: 2px;
+  -moz-border-radius-bottomleft: 2px;
+  -moz-border-radius-bottomright: 2px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
 }
 
 #django-admin-layer[data-position='right'][data-state='open'] .toggle-container a {
@@ -205,24 +205,24 @@
   background-position: 0px 4px;
   background-color: #fff;
   opacity: 0.8;
-  -webkit-border-top-right-radius: 3px;
-  -webkit-border-bottom-right-radius: 3px;
-  -moz-border-radius-topright: 3px;
-  -moz-border-radius-bottomright: 3px;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
+  -webkit-border-top-right-radius: 2px;
+  -webkit-border-bottom-right-radius: 2px;
+  -moz-border-radius-topright: 2px;
+  -moz-border-radius-bottomright: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
 }
 
 #django-admin-layer[data-position='right'][data-state='closed'] .toggle-container a {
   padding: 10px 15px;
   background-image: url(../img/caret-left-inverse.png);
   background-position: 0px 4px;
-  -webkit-border-top-left-radius: 3px;
-  -webkit-border-bottom-left-radius: 3px;
-  -moz-border-radius-topleft: 3px;
-  -moz-border-radius-bottomleft: 3px;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
+  -webkit-border-top-left-radius: 2px;
+  -webkit-border-bottom-left-radius: 2px;
+  -moz-border-radius-topleft: 2px;
+  -moz-border-radius-bottomleft: 2px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
 }
 
 #django-admin-layer[data-position='bottom'][data-state='open'] .toggle-container a {
@@ -231,24 +231,24 @@
   background-position: 4px -1px;
   background-color: #fff;
   opacity: 0.8;
-  -webkit-border-bottom-left-radius: 3px;
-  -webkit-border-bottom-right-radius: 3px;
-  -moz-border-radius-bottomleft: 3px;
-  -moz-border-radius-bottomright: 3px;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 2px;
+  -webkit-border-bottom-right-radius: 2px;
+  -moz-border-radius-bottomleft: 2px;
+  -moz-border-radius-bottomright: 2px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
 }
 
 #django-admin-layer[data-position='bottom'][data-state='closed'] .toggle-container a {
   padding: 5px 20px;
   background-image: url(../img/caret-up-inverse.png);
   background-position: 4px -1px;
-  -webkit-border-top-left-radius: 3px;
-  -webkit-border-top-right-radius: 3px;
-  -moz-border-radius-topleft: 3px;
-  -moz-border-radius-topright: 3px;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+  -webkit-border-top-left-radius: 2px;
+  -webkit-border-top-right-radius: 2px;
+  -moz-border-radius-topleft: 2px;
+  -moz-border-radius-topright: 2px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
 }
 
 #django-admin-layer[data-position='left'][data-state='open'] .toggle-container a {
@@ -257,22 +257,22 @@
   background-position: 0px 4px;
   background-color: #fff;
   opacity: 0.8;
-  -webkit-border-top-left-radius: 3px;
-  -webkit-border-bottom-left-radius: 3px;
-  -moz-border-radius-topleft: 3px;
-  -moz-border-radius-bottomleft: 3px;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
+  -webkit-border-top-left-radius: 2px;
+  -webkit-border-bottom-left-radius: 2px;
+  -moz-border-radius-topleft: 2px;
+  -moz-border-radius-bottomleft: 2px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
 }
 
 #django-admin-layer[data-position='left'][data-state='closed'] .toggle-container a {
   padding: 10px 15px;
   background-image: url(../img/caret-right-inverse.png);
   background-position: 0px 4px;
-  -webkit-border-top-right-radius: 3px;
-  -webkit-border-bottom-right-radius: 3px;
-  -moz-border-radius-topright: 3px;
-  -moz-border-radius-bottomright: 3px;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
+  -webkit-border-top-right-radius: 2px;
+  -webkit-border-bottom-right-radius: 2px;
+  -moz-border-radius-topright: 2px;
+  -moz-border-radius-bottomright: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
 }
