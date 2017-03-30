@@ -3,7 +3,11 @@
 
 # Screenshots
 
+### Position: top, state: open
+
 ![Top Open Toolbar](docs/img/django_admin_shortcuts_top_open.png?raw=true "Top Open Toolbar")
+
+### Position: top, state: closed
 
 ![Top Closed Toolbar](docs/img/django_admin_shortcuts_top_closed.png?raw=true "Top Closed Toolbar")
 
@@ -12,20 +16,22 @@
 * Python (3.5)
 * Django (1.10)
 
+Currently tested only on the above noted versions of Python and Django. Will test further with older versions and update the list.
+
 # Installation
 
-Install using `pip`...
+Install using `pip`
 
     pip install django-admin-shortcuts
 
-Add `'admin_shortcuts'` to your `INSTALLED_APPS` setting.
+Add `'admin_shortcuts'` to your `INSTALLED_APPS` setting
 
     INSTALLED_APPS = (
         ...
         'admin_shortcuts',
     )
 
-Enable `admin_shortcuts` middleware.
+Enable `admin_shortcuts` middleware
 
     MIDDLEWARE = [
         ...
