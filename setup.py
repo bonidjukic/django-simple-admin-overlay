@@ -8,14 +8,14 @@ with open(os.path.join(os.path.dirname(__file__), 'README.md')) as readme:
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
-    name='django-admin-shortcuts',
+    name='django-simple-admin-overlay',
     version='0.1',
     packages=find_packages(),
     include_package_data=True,
     license='MIT License',
     description='Lightweight Django app which displays simple overlay with admin links on the frontend pages.',
     long_description=README,
-    url='https://github.com/bonidjukic/django-admin-shortcuts',
+    url='https://github.com/bonidjukic/django-simple-admin-overlay',
     author='Boni Đukić',
     author_email='boni@djukic.com.hr',
     classifiers=[

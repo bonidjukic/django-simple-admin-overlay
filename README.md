@@ -1,15 +1,20 @@
-# Django Admin Shortcuts
+# Django Simple Admin Overlay
+
 **Lightweight Django app which displays simple overlay with admin links on the frontend pages.**
+
+Django Simple Admin Overlay replaces the need to manually append `/admin` to the browser's URL bar or to bookmark the administration link during the development of Django projects.
+
+Version: 0.1
 
 # Screenshots
 
 ### Position: top, state: open
 
-![Top Open Toolbar](docs/img/django_admin_shortcuts_top_open.png?raw=true "Top Open Toolbar")
+![Top Open Toolbar](docs/img/django_simple_admin_overlay_top_open.png?raw=true "Top Open Toolbar")
 
 ### Position: top, state: closed
 
-![Top Closed Toolbar](docs/img/django_admin_shortcuts_top_closed.png?raw=true "Top Closed Toolbar")
+![Top Closed Toolbar](docs/img/django_simple_admin_overlay_top_closed.png?raw=true "Top Closed Toolbar")
 
 # Requirements
 
@@ -22,30 +27,30 @@ Currently tested only on the above noted versions of Python and Django. Will tes
 
 Install using `pip`
 
-    pip install django-admin-shortcuts
+    pip install django-simple-admin-overlay
 
-Add `'admin_shortcuts'` to your `INSTALLED_APPS` setting
+Add `'simple_admin_overlay'` to your `INSTALLED_APPS` setting
 
     INSTALLED_APPS = (
         ...
-        'admin_shortcuts',
+        'simple_admin_overlay',
     )
 
-Enable `admin_shortcuts` middleware
+Enable `simple_admin_overlay` middleware
 
     MIDDLEWARE = [
         ...
-        'admin_shortcuts.middleware.AdminLayerMiddleware',
+        'simple_admin_overlay.middleware.SimpleAdminOverlayMiddleware',
     ]
 
 # Configuration
 
-You can change a limited number of options by adding `ADMIN_SHORTCUTS_CONFIG` dictionary to your `settings.py`.
+You can change a limited number of options by adding `SIMPLE_ADMIN_OVERLAY_CONFIG` dictionary to your `settings.py`.
 
 Default values are:
 
-    ADMIN_SHORTCUTS_CONFIG = {
-        'TOOLBAR_POSITION': 'top', # top, right, bottom, left
+    SIMPLE_ADMIN_OVERLAY_CONFIG = {
+        'OVERLAY_POSITION': 'top', # top, right, bottom, left
         'DEFAULT_STATE': 'open', # open, closed
     }
 
@@ -55,5 +60,6 @@ Make sure that you're logged in as an authenticated user and have access to the 
 
 # To-do list
 
+- Add `DEVELOPMENT_MODE` option which would depend on the `DEBUG` setting
 - Ability to manually exclude an app or a model via `settings.py`
 - Persist toolbar state (open, closed) via cookie or local storage

@@ -1,7 +1,7 @@
 include README.md
 include LICENSE
-recursive-include admin_shortcuts/static *.js *.css
-recursive-include admin_shortcuts/templates *.html
+recursive-include simple_admin_overlay/static *
+recursive-include simple_admin_overlay/templates *.html
 recursive-include docs *
 recursive-exclude * __pycache__
 recursive-exclude * *.py[co]

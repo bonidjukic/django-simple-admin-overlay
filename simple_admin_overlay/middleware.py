@@ -1,11 +1,11 @@
 """
-Django Admin Shortcuts middleware
+Django Simple Admin Overlay middleware
 """
 
 import re
 import django.contrib.admin as admin
-import admin_shortcuts.util as util
-import admin_shortcuts.settings as al_settings
+import simple_admin_overlay.util as util
+import simple_admin_overlay.settings as al_settings
 
 from django.core.urlresolvers import NoReverseMatch, reverse
 from django.template.loader import render_to_string
@@ -20,18 +20,18 @@ except ImportError:  # Django < 1.10
 _HTML_TYPES = ('text/html', 'application/xhtml+xml')
 
 
-class AdminLayerMiddleware(MiddlewareMixin):
+class SimpleAdminOverlayMiddleware(MiddlewareMixin):
     """
     Middleware to display the admin links on frontend pages.
     """
 
     allowed_status_codes = (200,)
     allowed_content_types = ('text/html', 'application/xhtml+xml')
-    template = 'admin_shortcuts.html'
+    template = 'simple_admin_overlay.html'
 
     def process_response(self, request, response):
         """
-        Insert necessary javascript to set admin shortcuts
+        Insert necessary javascript to set admin overlay
         """
 
         if self.is_regular_page(request, response) and self.can_show_overlay(request, response):
@@ -73,8 +73,8 @@ class AdminLayerMiddleware(MiddlewareMixin):
                 head_pattern = re.compile(b'</head>', re.IGNORECASE)
                 body_pattern = re.compile(b'</body>', re.IGNORECASE)
 
-                head_tags = util.generate_javascript_tag('admin_shortcuts.js') + \
-                            util.generate_css_tag('admin_shortcuts.css')
+                head_tags = util.generate_javascript_tag('simple_admin_overlay.js') + \
+                            util.generate_css_tag('simple_admin_overlay.css')
                 response.content = head_pattern.sub(head_tags + b'</head>', response.content)
 
                 template = render_to_string(self.template,
@@ -91,6 +91,6 @@ class AdminLayerMiddleware(MiddlewareMixin):
 
         return {
             'app_list': admin.site.get_app_list(request),
-            'toolbar_position': al_settings_config['TOOLBAR_POSITION'],
+            'overlay_position': al_settings_config['OVERLAY_POSITION'],
             'default_state': al_settings_config['DEFAULT_STATE']
         }
