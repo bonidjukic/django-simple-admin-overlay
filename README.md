@@ -1,6 +1,12 @@
 # Django Admin Shortcuts
 **Lightweight Django app which displays simple overlay with admin links on the frontend pages.**
 
+# Screenshots
+
+![Top Open Toolbar](docs/img/django_admin_shortcuts_top_open.png?raw=true "Top Open Toolbar")
+
+![Top Closed Toolbar](docs/img/django_admin_shortcuts_top_closed.png?raw=true "Top Closed Toolbar")
+
 # Requirements
 
 * Python (3.5)
