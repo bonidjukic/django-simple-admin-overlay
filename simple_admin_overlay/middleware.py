@@ -92,5 +92,6 @@ class SimpleAdminOverlayMiddleware(MiddlewareMixin):
         return {
             'app_list': admin.site.get_app_list(request),
             'overlay_position': al_settings_config['OVERLAY_POSITION'],
-            'default_state': al_settings_config['DEFAULT_STATE']
+            'default_state': al_settings_config['DEFAULT_STATE'],
+            'show_apps_only': al_settings_config['SHOW_APPS_ONLY'],
         }
