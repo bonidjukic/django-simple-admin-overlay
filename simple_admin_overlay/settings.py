@@ -5,7 +5,9 @@ from django.utils.lru_cache import lru_cache
 CONFIG_DEFAULTS = {
     'OVERLAY_POSITION': 'top',
     'DEFAULT_STATE': 'open',
-    'SHOW_APPS_ONLY': False
+    'SHOW_APPS_ONLY': False,
+    'EXCLUDE_APPS': [],
+    'EXCLUDE_MODELS': {},
 }
 
 

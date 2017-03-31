@@ -4,7 +4,7 @@
 
 Django Simple Admin Overlay replaces the need to manually append `/admin` to the browser's URL bar or to bookmark the administration link during the development of Django projects.
 
-Version: 0.1
+Version: 0.2
 
 # Screenshots
 
@@ -50,9 +50,39 @@ You can change a limited number of options by adding `SIMPLE_ADMIN_OVERLAY_CONFI
 Default values are:
 
     SIMPLE_ADMIN_OVERLAY_CONFIG = {
-        'OVERLAY_POSITION': 'top', # top, right, bottom, left
-        'DEFAULT_STATE': 'open', # open, closed
+        'OVERLAY_POSITION': 'top',
+        'DEFAULT_STATE': 'open',
+        'SHOW_APPS_ONLY': False,
+        'EXCLUDE_APPS': [],
+        'EXCLUDE_MODELS': {},
     }
+
+#### `OVERLAY_POSITION (default='top')`
+Defines the display positioning of the fixed overlay.
+
+Available values: `top`, `right`, `bottom`, `left`
+
+#### `DEFAULT_STATE (default='open')`
+Defines the default state of the overlay, i.e. will it be shown or hidden on page load.
+
+Available values: `open`, `closed`
+
+#### `SHOW_APPS_ONLY (default=False)`
+If set to `True` only the application links will be shown, i.e. model links will be hidden.
+
+#### `EXCLUDE_APPS (default=[])`
+Applications defined within this list will not be listed in the overlay. Use the same application name format as used in the `INSTALLED_APPS` setting.
+
+#### `EXCLUDE_APPS (default={})`
+Models defined within this dictionary will not be listed in the overlay. Use the same model name format as the name of the classes within `models.py`.
+
+Example:
+
+    EXCLUDE_MODELS': {
+        'spam_app': ['spamAppModel', 'AnotherSpamAppModel'],
+        'eggs_app': ['EggsAppModel'],
+    }
+
 
 # Common issues
 
@@ -61,5 +91,4 @@ Make sure that you're logged in as an authenticated user and have access to the 
 # To-do list
 
 - Add `DEVELOPMENT_MODE` option which would depend on the `DEBUG` setting
-- Ability to manually exclude an app or a model via `settings.py`
 - Persist toolbar state (open, closed) via cookie or local storage

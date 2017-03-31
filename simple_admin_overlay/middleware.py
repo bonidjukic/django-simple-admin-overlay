@@ -5,7 +5,7 @@ Django Simple Admin Overlay middleware
 import re
 import django.contrib.admin as admin
 import simple_admin_overlay.util as util
-import simple_admin_overlay.settings as al_settings
+import simple_admin_overlay.settings as simple_admin_overlay_settings
 
 from django.core.urlresolvers import NoReverseMatch, reverse
 from django.template.loader import render_to_string
@@ -28,6 +28,7 @@ class SimpleAdminOverlayMiddleware(MiddlewareMixin):
     allowed_status_codes = (200,)
     allowed_content_types = ('text/html', 'application/xhtml+xml')
     template = 'simple_admin_overlay.html'
+    simple_admin_overlay_config = simple_admin_overlay_settings.get_config()
 
     def process_response(self, request, response):
         """
@@ -89,11 +90,28 @@ class SimpleAdminOverlayMiddleware(MiddlewareMixin):
         return response
 
     def get_context_data(self, request):
-        al_settings_config = al_settings.get_config()
-
         return {
-            'app_list': admin.site.get_app_list(request),
-            'overlay_position': al_settings_config['OVERLAY_POSITION'],
-            'default_state': al_settings_config['DEFAULT_STATE'],
-            'show_apps_only': al_settings_config['SHOW_APPS_ONLY'],
+            'app_list': self.get_app_list(request),
+            'overlay_position': self.simple_admin_overlay_config['OVERLAY_POSITION'],
+            'default_state': self.simple_admin_overlay_config['DEFAULT_STATE'],
+            'show_apps_only': self.simple_admin_overlay_config['SHOW_APPS_ONLY'],
         }
+
+    def get_app_list(self, request):
+        exclude_apps = self.simple_admin_overlay_config['EXCLUDE_APPS']
+        exclude_models = self.simple_admin_overlay_config['EXCLUDE_MODELS']
+
+        if not exclude_apps and not exclude_models:
+            return admin.site.get_app_list(request)
+        else:
+            app_list = []
+
+            for app in admin.site.get_app_list(request):
+                if app['app_label'] not in exclude_apps:
+                    if app['app_label'] in exclude_models.keys():
+                        app['models'] = [m for m
+                                         in app['models']
+                                         if m['object_name'] not in exclude_models[app['app_label']]]
+                    app_list.append(app)
+
+            return app_list
