@@ -49,12 +49,14 @@ class SimpleAdminOverlayMiddleware(MiddlewareMixin):
         """
         return self.is_valid_user(request) and self.is_frontend_page(request)
 
-    def is_valid_user(self, request):
+    @staticmethod
+    def is_valid_user(request):
         return hasattr(request, 'user') \
            and request.user.is_authenticated() \
            and request.user.is_staff
 
-    def is_frontend_page(self, request):
+    @staticmethod
+    def is_frontend_page(request):
         try:
             return not request.path.startswith(reverse('admin:index'))
         except NoReverseMatch:
