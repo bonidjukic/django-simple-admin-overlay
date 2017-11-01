@@ -73,7 +73,7 @@ If set to `True` only the application links will be shown, i.e. model links will
 #### `EXCLUDE_APPS (default=[])`
 Applications defined within this list will not be listed in the overlay. Use the same application name format as used in the `INSTALLED_APPS` setting.
 
-#### `EXCLUDE_APPS (default={})`
+#### `EXCLUDE_MODELS (default={})`
 Models defined within this dictionary will not be listed in the overlay. Use the same model name format as the name of the classes within `models.py`.
 
 Example:
